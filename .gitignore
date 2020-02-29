@@ -1,0 +1,8 @@
+bin/
+obj/
+/packages/
+.idea/.idea.FsAmap/.idea/
+
+.idea/.idea.FsAmap/
+
+.ionide/

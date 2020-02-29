@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsAmap.Domain", "FsAmap.Domain\FsAmap.Domain.fsproj", "{F5DEA11D-0344-4A62-9D1B-41422F334F51}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsAmap.Web", "FsAmap.Web\FsAmap.Web.fsproj", "{DC6E476E-716D-4385-BA7B-E44E9462AF00}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsAmap.Infra", "FsAmap.Infra\FsAmap.Infra.fsproj", "{8FAB33FE-E682-4C20-A074-FDD0937E558F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5DEA11D-0344-4A62-9D1B-41422F334F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DEA11D-0344-4A62-9D1B-41422F334F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DEA11D-0344-4A62-9D1B-41422F334F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DEA11D-0344-4A62-9D1B-41422F334F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6E476E-716D-4385-BA7B-E44E9462AF00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6E476E-716D-4385-BA7B-E44E9462AF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6E476E-716D-4385-BA7B-E44E9462AF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6E476E-716D-4385-BA7B-E44E9462AF00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FAB33FE-E682-4C20-A074-FDD0937E558F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAB33FE-E682-4C20-A074-FDD0937E558F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAB33FE-E682-4C20-A074-FDD0937E558F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAB33FE-E682-4C20-A074-FDD0937E558F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

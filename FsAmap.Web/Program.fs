@@ -1,36 +1,23 @@
 ﻿open Saturn
+
+open FsAmap.Web.Routes
 open FsAmap.Web
 
 let port = 8085us
 
+let réservationsRouter =
+    router {
+        forward "/panierDuJour" RéservationsPanierDuJourRoute.route
+        forward "/panierPersonnalise" RéservationsPanierPersonnaliséRoute.route
+    }
+    
 let mainRouter =
     router {
+        forward "/produits" ProduitsRoute.route
         forward "/panierDuJour" PanierDuJourRoute.route
-        forward "/reservations" ReservationsRoutes.route
+        forward "/reservations" réservationsRouter
     }
-
-(*
-GET /api/produits
-    {
-        id: int
-        nom: string
-        prix: decimal
-        typePrix: unité | kg
-    }[]
-
-GET /api/panierDuJour
-    prix: euro
-    produits: {
-        id: int
-        nom: string
-        quantité:
-            unité: int | poidsEnKg: decimal
-    }[]
     
-POST /api/panierDuJour/reserver
-    idClient: int
-    quantité: int
-*)
 let app =
     application {
         use_router mainRouter

@@ -1,7 +1,15 @@
 namespace FsAmap.Domain
 
-type ReservationPanierDuJour =
+type ClientId = int
+
+type RéservationPanierDuJour =
     {
-        clientId: int
-        quantite: int
+        clientId: ClientId
+        quantité: int
+    }
+    
+type RéservationPanierPersonnalisé =
+    {
+        clientId: ClientId
+        panier: PanierPersonnalisé
     }

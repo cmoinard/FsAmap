@@ -7,9 +7,11 @@
 
     <ItemGroup>
         <Compile Include="Helpers.fs" />
-        <Compile Include="Dtos.fs" />
-        <Compile Include="PanierDuJourRoute.fs" />
-        <Compile Include="ReservationsRoutes.fs" />
+        <Compile Include="Routes\QuantitéDeProduitDto.fs" />
+        <Compile Include="Routes\PanierDuJourRoute.fs" />
+        <Compile Include="Routes\ProduitsRoute.fs" />
+        <Compile Include="Routes\RéservationsPanierDuJourRoute.fs" />
+        <Compile Include="Routes\RéservationsPanierPersonnaliséRoute.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 

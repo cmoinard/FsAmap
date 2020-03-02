@@ -13,12 +13,15 @@ type Quantité =
     | ``À l'unité`` of int
     | ``Au poids`` of decimal<kg>
 
+type ProduitEnVrac = Produit * Prix
 type PanierDuJour =
     {
         prix: Prix
         produits: (Produit * Quantité) list
     }
     
+type PanierPersonnalisé = (Produit * Quantité) list
+    
 type Panier =
     | PanierDuJour of PanierDuJour
-    | PanierPersonnalisé of (Produit * Quantité * Prix) list 
+    | PanierPersonnalisé of PanierPersonnalisé 

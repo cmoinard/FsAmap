@@ -2,6 +2,7 @@ module FsAmap.Infra.Sql.SqlPanierDuJour
 
 open FSharp.Data
 open FsAmap.Domain
+open FsAmap.Infra
 open FsAmap.Infra.Sql
 
 type private ProduitPanierDto =
@@ -10,12 +11,6 @@ type private ProduitPanierDto =
         quantitéAuPoids: decimal option
         quantitéUnitaire: int option
     }
-
-let private créerQuantité qteU qteP =
-    match qteU, qteP with
-    | Some u, _ -> ``À l'unité`` u
-    | _, Some p -> ``Au poids`` (1m<kg> * p)
-    | _ -> invalidOp "Doit être soit au poids soit à l'unité"
     
 let private panierFromDb () =
     async {        
@@ -64,7 +59,7 @@ let lister () : Async<PanierDuJour> =
                 prix = panier.prix
                 produits =
                     produitsPanier
-                    |> List.map (fun p -> p.produit, créerQuantité p.quantitéUnitaire p.quantitéAuPoids)
+                    |> List.map (fun p -> p.produit, Quantité.créer p.quantitéUnitaire p.quantitéAuPoids)
             }
         return panierDuJour
     }

@@ -13,6 +13,7 @@
     <Import Project="fsc.props" />
 
     <ItemGroup>
+        <Compile Include="Quantité.fs" />
         <Compile Include="InMemory\Produits.fs" />
         <Compile Include="InMemory\InMemoryPanierDuJour.fs" />
         <Compile Include="InMemory\InMemoryProduits.fs" />
@@ -22,6 +23,7 @@
         <Compile Include="Sql\SqlProduits.fs" />
         <Compile Include="Sql\SqlPanierDuJour.fs" />
         <Compile Include="Sql\SqlReservationPanierDuJour.fs" />
+        <Compile Include="Sql\SqlReservationPanierPersonnalise.fs" />
         <Content Include="Sql\init_db.sql" />
         <Content Include="fsc.props" />
     </ItemGroup>

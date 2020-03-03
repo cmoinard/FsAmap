@@ -1,22 +1,19 @@
 module FsAmap.Web.RéservationsPanierDuJourRoute
 
-open System.Threading.Tasks
 open Saturn
 open FSharp.Control.Tasks.V2
 
-open FsAmap.Infra.InMemory
+open FsAmap.Infra.Sql
 open FsAmap.Web.Helpers
 
 let private getRéservations () =
     task {
-        do! Task.Delay 300
-        return InMemoryReservationPanierDuJour.lister ()
+        return! SqlReservationPanierDuJour.lister ()
     }
 
 let private réserver réservation =    
     task {
-        do! Task.Delay 300
-        InMemoryReservationPanierDuJour.réserver réservation
+        do! SqlReservationPanierDuJour.réserver réservation
     }
        
 let route =

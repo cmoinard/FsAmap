@@ -4,16 +4,35 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <DisableAutoSetFscCompilerPath>true</DisableAutoSetFscCompilerPath>
+        <DotNetFscToolPath></DotNetFscToolPath>
+        <DotnetFscCompilerPath></DotnetFscCompilerPath>
+    </PropertyGroup>
+
+    <Import Project="fsc.props" />
+
     <ItemGroup>
         <Compile Include="InMemory\Produits.fs" />
         <Compile Include="InMemory\InMemoryPanierDuJour.fs" />
         <Compile Include="InMemory\InMemoryProduits.fs" />
         <Compile Include="InMemory\InMemoryReservationPanierDuJour.fs" />
         <Compile Include="InMemory\InMemoryReservationPanierPersonnalise.fs" />
+        <Compile Include="Sql\ConnectionString.fs" />
+        <Compile Include="Sql\SqlProduits.fs" />
+        <Compile Include="Sql\SqlPanierDuJour.fs" />
+        <Compile Include="Sql\SqlReservationPanierDuJour.fs" />
+        <Content Include="Sql\init_db.sql" />
+        <Content Include="fsc.props" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\FsAmap.Domain\FsAmap.Domain.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FSharp.Data.SqlClient" Version="2.0.6" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
     </ItemGroup>
 
 </Project>

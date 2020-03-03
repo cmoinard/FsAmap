@@ -1,3 +1,4 @@
+drop table dbo.ReservationProduitPanierPersonnalise;
 drop table dbo.ReservationPanierDuJour;
 drop table dbo.ProduitsPanierDuJour;
 drop table dbo.PanierDuJour;
@@ -44,4 +45,11 @@ select 1, 4, null, 6;
 create table dbo.ReservationPanierDuJour (
     clientId int not null,
     quantite int not null
+)
+-- Réservation Panier personnalisé
+create table dbo.ReservationProduitPanierPersonnalise (
+    clientId int not null,
+    produitId int not null,
+	quantiteAuPoids decimal null,
+	quantiteUnitaire int null
 )

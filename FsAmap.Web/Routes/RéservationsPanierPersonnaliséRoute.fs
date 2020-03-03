@@ -1,11 +1,10 @@
 module FsAmap.Web.RéservationsPanierPersonnaliséRoute
 
-open System.Threading.Tasks
 open Saturn
 open FSharp.Control.Tasks.V2
 
 open FsAmap.Domain
-open FsAmap.Infra.InMemory
+open FsAmap.Infra.Sql
 open FsAmap.Web.Helpers
 open FsAmap.Web.Routes
 
@@ -34,10 +33,10 @@ let private toDto (réservation: RéservationPanierPersonnalisé) =
 
 let private getRéservations () =
     task {
-        do! Task.Delay 300
+        let! réservationsDb = SqlReservationPanierPersonnalise.lister ()
         
         let réservations =
-            InMemoryReservationPanierPersonnalise.lister ()
+            réservationsDb
             |> List.map toDto
         
         return réservations
@@ -45,11 +44,11 @@ let private getRéservations () =
 
 let private réserver réservation =    
     task {
-        do! Task.Delay 300
+        let dto =  
+            réservation
+            |> fromDto
         
-        réservation
-        |> fromDto
-        |> InMemoryReservationPanierPersonnalise.réserver
+        do! SqlReservationPanierPersonnalise.réserver dto
     }
        
 let route =
